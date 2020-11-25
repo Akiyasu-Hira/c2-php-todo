@@ -90,7 +90,7 @@ class TodoController extends Controller
         $todo->save();
 
         //タスク単体ページにリダイレクト
-        return redirect()->to('todo/')
+        return redirect()->to('todo/');
     }
 
     /**
