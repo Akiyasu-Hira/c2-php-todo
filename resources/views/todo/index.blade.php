@@ -1,17 +1,5 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-          crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
-    <title>TODO App</title>
-</head>
-<body>
-
+@extends('layouts.app')
+@section('content')
 <div class="container">
     <div class="col-md-12">
         <h1 class="text-center text-primary py-3">TODO App</h1>
@@ -23,8 +11,11 @@
         <table class="table">
             <thead>
             <tr>
-                <th>タイトル</th>
-                <th>期限</th>
+                <th width="40%">タイトル</th>
+                <th width="20%">期限</th>
+                <th width="10%">状態</th>
+                <th width="15%"></th>
+                <th width="15%"></th>
             </tr>
             </thead>
             <tbody>
@@ -36,6 +27,7 @@
                         </a>
                     </td>
                     <td>{{ $todo->due_date }}</td>
+                    <td>{{ $todo->getStatusText() }}</td>
                     <td>
                         <a href="/todo/{{ $todo->id }}/edit" class="btn btn-success">
                             <i class="fas fa-edit mr-2"></i>
@@ -55,6 +47,7 @@
         {{ $todo_list->links() }}
     </div>
 </div>
+@endsection
 
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
