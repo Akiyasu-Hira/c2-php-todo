@@ -43,10 +43,10 @@
                         </a>
                     </td>
                     <td>
-                        <button class="btn btn-danger">
-                            <i class="fas fa-trash mr-2"></i>
-                            削除
-                        </button>
+                        <form action="/todo/{{ $todo->id }}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button class="btn btn-danger" type="submit"><i class="fas fa-trash mr-2"></i>削除</button>
                     </td>
                 </tr>
             @endforeach

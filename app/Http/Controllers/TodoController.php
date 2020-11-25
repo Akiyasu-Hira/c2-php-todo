@@ -102,6 +102,6 @@ class TodoController extends Controller
     {
         $todo = Auth::user()->todos()->findOrFail($id);
         $todo->delete();
-        return redirect()->to('/todo/' . $todo->id);
+        return redirect()->to('/todo');
     }
 }
