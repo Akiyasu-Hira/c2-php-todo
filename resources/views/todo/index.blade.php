@@ -43,7 +43,7 @@
                         </a>
                     </td>
                     <td>
-                        < class="btn btn-danger">
+                        <button class="btn btn-danger">
                             <i class="fas fa-trash mr-2"></i>
                             削除
                         </button>
